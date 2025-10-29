@@ -22,6 +22,12 @@
 #ifndef SOL_HPP
 #define SOL_HPP
 
+#include <iostream>
+#include <vector>
+#include <string>
+#include <functional>
+#include <filesystem>
+#include <map>
 #include <sol/version.hpp>
 
 #if SOL_IS_ON(SOL_INSIDE_UNREAL_ENGINE)
@@ -77,5 +83,17 @@
 #undef check
 #pragma pop_macro("check")
 #endif // Unreal Engine 4 Bullshit
+
+namespace sol
+{
+	template <>
+	struct is_container<std::filesystem::path> : std::false_type {};
+
+	template <>
+	struct is_to_stringable<std::filesystem::path> : std::false_type {};
+
+	template <>
+	struct is_automagical<std::filesystem::path> : std::false_type {};
+}
 
 #endif // SOL_HPP
