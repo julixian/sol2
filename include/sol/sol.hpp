@@ -22,12 +22,7 @@
 #ifndef SOL_HPP
 #define SOL_HPP
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <functional>
 #include <filesystem>
-#include <map>
 #include <sol/version.hpp>
 
 #if SOL_IS_ON(SOL_INSIDE_UNREAL_ENGINE)
